@@ -1,0 +1,55 @@
+# Author : AL
+# Usage  : python3  opt_argparse.py -i inputfile -o outputfile
+
+
+#!/usr/bin/python3
+
+import argparse
+import sys, os
+
+lloyd = {
+    "name": "Lloyd",
+    "homework": [90.0, 97.0, 75.0, 92.0],
+    "quizzes": [88.0, 40.0, 94.0],
+    "tests": [75.0, 90.0]
+}
+alice = {
+    "name": "Alice",
+    "homework": [100.0, 92.0, 98.0, 100.0],
+    "quizzes": [82.0, 83.0, 91.0],
+    "tests": [89.0, 97.0]
+}
+tyler = {
+	"name": "Tyler",
+	"homework": [0.0, 87.0, 75.0, 22.0],
+	"quizzes": [0.0, 75.0, 78.0],
+	"tests": [100.0, 100.0]
+}
+
+students=[lloyd,alice,tyler]
+for key in students:
+	print (key["name"])
+	print (key["homework"])
+	print (key["quizzes"])
+	print (key["tests"])
+
+
+
+
+def add_arg(parser, short_opt, long_opt, help_msg='Cannot be empty', require=True):
+	parser.add_argument(short_opt, long_opt, help=help_msg, required=require)
+
+
+print ("\n")
+parser=argparse.ArgumentParser()
+add_arg(parser, '-s', '--source', help_msg='Source file name', require='True')
+add_arg(parser, '-d', '--destination', help_msg='Destination file name', require='True')
+add_arg(parser, '-c', '--compose', help_msg='Compose file name', require='False')
+args = parser.parse_args()
+
+
+## show values ##
+print ("Input file : %s" % args.source  )
+print ("Output file: %s" % args.destination )
+print ("Compose file: %s" % args.compose )
+print ("\n" )
