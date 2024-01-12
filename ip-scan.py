@@ -1,11 +1,10 @@
-# Usage : Tested work mac air
-
-
 #!/usr/bin/env python2
 
 
+# Usage : Tested work mac air
 # https://www.python-course.eu/threads.php
 # Usage: ./thread-pings.py						# Tested work
+
 
 import os, re, threading
 
