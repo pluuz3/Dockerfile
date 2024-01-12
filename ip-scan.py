@@ -1,4 +1,8 @@
+# Usage : Tested work mac air
+
+
 #!/usr/bin/env python2
+
 
 # https://www.python-course.eu/threads.php
 # Usage: ./thread-pings.py						# Tested work
